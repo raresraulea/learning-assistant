@@ -1,0 +1,6 @@
+@RandomSubjectsApi_HostAddress = http://localhost:5072
+
+GET {{RandomSubjectsApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
