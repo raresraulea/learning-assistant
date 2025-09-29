@@ -14,7 +14,6 @@ import {
   InputLabel,
   Select,
   MenuItem,
-  SelectChangeEvent,
   Checkbox,
   ListItemText,
   Paper,
@@ -22,7 +21,8 @@ import {
   Switch,
   FormControlLabel,
 } from '@mui/material';
-import { Add, Close, Delete, Shuffle, PlayArrow } from '@mui/icons-material';
+import type { SelectChangeEvent } from '@mui/material/Select';
+import { Add, Close, Shuffle, PlayArrow } from '@mui/icons-material';
 import type { ExerciseModel, CreateTestDto } from '../types';
 
 interface TestCreationDialogProps {
@@ -51,10 +51,6 @@ const TestCreationDialog: React.FC<TestCreationDialogProps> = ({
   const [isCreating, setIsCreating] = useState(false);
 
   // Get all available tags from exercises
-  const availableTags = Array.from(
-    new Set(exercises.flatMap(exercise => exercise.tags))
-  ).sort();
-
   const availableFilterTags = Array.from(
     new Set(exercises.flatMap(exercise => exercise.tags))
   ).sort();

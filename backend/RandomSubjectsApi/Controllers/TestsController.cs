@@ -63,7 +63,6 @@ public class TestsController : ControllerBase
         {
             selectedExercises = await _context.Exercises
                 .Where(e => createTestDto.ExerciseIds.Contains(e.Id))
-                .Take(createTestDto.ExerciseCount)
                 .ToListAsync();
         }
         else
@@ -79,6 +78,9 @@ public class TestsController : ControllerBase
             var allExercises = await exercisesQuery.ToListAsync();
             selectedExercises = allExercises.OrderBy(x => Guid.NewGuid()).Take(createTestDto.ExerciseCount).ToList();
         }
+
+        // Update the test's exercise count to match actual selected exercises
+        test.ExerciseCount = selectedExercises.Count;
 
         // Create TestExercise relationships
         for (int i = 0; i < selectedExercises.Count; i++)

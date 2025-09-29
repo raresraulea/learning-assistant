@@ -163,7 +163,7 @@ const PracticeMode: React.FC<PracticeModeProps> = ({ exercises, onExit }) => {
   }
 
   return (
-    <Box sx={{ height: '100vh', display: 'flex', flexDirection: 'column' }}>
+    <Box sx={{ height: '100vh', width: '100vw', display: 'flex', flexDirection: 'column' }}>
       {/* Header */}
       <AppBar position="static" elevation={0} sx={{ backgroundColor: 'primary.main' }}>
         <Toolbar>
@@ -198,7 +198,7 @@ const PracticeMode: React.FC<PracticeModeProps> = ({ exercises, onExit }) => {
       </AppBar>
 
       {/* Main Content */}
-      <Box sx={{ flex: 1, display: 'flex', height: 'calc(100vh - 72px)' }}>
+      <Box sx={{ flex: 1, display: 'flex', height: 'calc(100vh - 72px)', width: '100%' }}>
         {/* Left Side - Exercise */}
         <Box
           sx={{

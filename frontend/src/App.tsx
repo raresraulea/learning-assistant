@@ -228,10 +228,12 @@ function App() {
     return (
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        <PracticeMode
-          exercises={selectedExercises}
-          onExit={handleExitPractice}
-        />
+        <Box sx={{ width: '100vw', height: '100vh', overflow: 'hidden' }}>
+          <PracticeMode
+            exercises={selectedExercises}
+            onExit={handleExitPractice}
+          />
+        </Box>
       </ThemeProvider>
     );
   }
